@@ -50,6 +50,11 @@ window.addEventListener("DOMContentLoaded", () =>{
         }
         this.currentIndex = newIndex;
       }
+    },
+    mounted(){
+      setInterval(() => {
+        this.downClick();
+      }, 3000);
     }
   });
 });
