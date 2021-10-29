@@ -35,7 +35,12 @@ window.addEventListener("DOMContentLoaded", () =>{
       currentIndex: 0,
     },
     methods:{
-
+      upClick(){
+        this.currentIndex--
+      },
+      downClick(){
+        this.currentIndex++
+      }
     }
   });
 });

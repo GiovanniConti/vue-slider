@@ -19,18 +19,18 @@
           <div class="container-img-overlay">
             
             <div class="container-img">
-              <img class="img active" :class="" v-for="image, i in imagesList" :src="image.urlImg" :alt="'img ' + (i + 1)">
+              <img class="img " :class="i == currentIndex ? 'active' : ''" v-for="image, i in imagesList" :src="image.urlImg" :alt="'img ' + (i + 1)">
             </div>
-            <div class="container-overlay">
-              <h1 class="title active" v-for="image in imagesList">{{image.titleImg}}</h1>
-              <p class="news active" v-for="image in imagesList">{{image.descriptionImg}}</p>
+            <div class="container-overlay" v-for="image, i in imagesList">
+              <h1 class="title " :class="i == currentIndex ? 'active' : ''" >{{image.titleImg}}</h1>
+              <p class="news " :class="i == currentIndex ? 'active' : ''">{{image.descriptionImg}}</p>
             </div>
             
           </div>
           <nav class="nav">
-            <a href="#" class="chevron chevron-up"><i class="fas fa-chevron-up"></i></a>
-            <a href="#" class="chevron chevron-down"><i class="fas fa-chevron-down"></i></a>
-            <img class="img-nav active" v-for="image in imagesList" :src="image.urlImg" :alt="image.titleImg">
+            <a href="#" class="chevron chevron-up" @click="upClick"><i class="fas fa-chevron-up"></i></a>
+            <a href="#" class="chevron chevron-down" @click="downClick"><i class="fas fa-chevron-down"></i></a>
+            <img class="img-nav" :class="i == currentIndex ? 'active-nav' : ''" v-for="image, i in imagesList" :src="image.urlImg" :alt="'img ' + (i + 1)">
           </nav>
         </div>
     </main>
