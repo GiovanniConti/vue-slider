@@ -36,10 +36,19 @@ window.addEventListener("DOMContentLoaded", () =>{
     },
     methods:{
       upClick(){
-        this.currentIndex--
+        let newIndex = this.currentIndex - 1;
+
+        if(newIndex < 0) {
+          newIndex = this.imagesList.length - 1;
+        }
+        this.currentIndex = newIndex;
       },
       downClick(){
-        this.currentIndex++
+        let newIndex = this.currentIndex + 1;
+        if(newIndex > (this.imagesList.length - 1)){
+          newIndex = 0;
+        }
+        this.currentIndex = newIndex;
       }
     }
   });
